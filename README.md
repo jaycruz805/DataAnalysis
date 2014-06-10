@@ -5,7 +5,7 @@ These programs analyze data using mathematical models and produces useful data/r
 
 Instructions: Download Files and Run files individually using any Python IDE or Command Line Interpreter.
 
-Interpolation.py:
+**Interpolation.py:**
                     Data: To represent data points create a matrix where the 
                           first row represents your x-points and your second row
                           represents your y points.
@@ -36,7 +36,8 @@ Interpolation.py:
                             cs = CSMethod(data)
                             print(evalPoly(S[0], 5.35)
 
-plotInterp.py: This file depends on interpolation.py and uses its methods to 
+**plotInterp.py:**
+               This file depends on interpolation.py and uses its methods to 
                graph interpolating polynomials. interpolation.py must be in the 
                same file directory as this file. 
                
