@@ -16,7 +16,7 @@ Instructions: Download Files and Run files individually using any Python IDE or 
                              in array format. Which can be used to evaluate any 
                              point. In spline the case of spline methods, 
                              the methods will return a matrix where each row 
-                             represents a linear equation based on interval. 
+                             represents an equation based on interval. 
                                                       
                             Langrange:  LMethod(data)
                             Hermite:    HMethod(data)
