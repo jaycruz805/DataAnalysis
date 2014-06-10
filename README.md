@@ -60,7 +60,7 @@ Instructions: Download Files and Run files individually using any Python IDE or 
                             Display: restConfig()
                         
                             plotAll(data)       #plots and displays all methods
-
-![alt tag](https://raw.github.com/jaycruz805/dataAnalysis/exampleGraphs.png
+**SnapShots:**
+![alt tag](https://github.com/jaycruz805/dataAnalysis/exampleGraphs.png
 
 Enjoy!
