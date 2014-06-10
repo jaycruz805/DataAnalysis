@@ -18,15 +18,11 @@ import matplotlib.pyplot as plt
 from numpy import arange
 from math import *
 
-xInterval = [0, 1.0/6, 1.0/3, 1.0/2, 7.0/12, 2.0/3, 3.0/4, 5.0/6, 11.0/12, 1.0]
+
 #import data set and Polynomials
 "iData contains data points for specific X's on a specific function"
+xInterval = [0, 1.0/6, 1.0/3, 1.0/2, 7.0/12, 2.0/3, 3.0/4, 5.0/6, 11.0/12, 1.0]
 iData = interpolation.GetData(xInterval)
-
-LR = interpolation.LMethod(iData)
-HR = interpolation.HMethod(iData)
-LSR = interpolation.LSMethod(iData)
-CSR = interpolation.CSMethod(iData)
 
 #import data for Multiple Graphs for L6(X) and PI(X)
 multLsix = []
@@ -53,17 +49,17 @@ def showF():
     #Ploting F(X)
     plt.plot(interval, FXI, color="blue", label = r'$F(x)$')
 
-def showLan():
+def showLan(ldat):
     #Y's for Lan(X)
-    LFunc = LR
+    LFunc = interpolation.LMethod(ldat)
     LY  = [interpolation.evalPoly(LFunc,t) for t in interval]
     
     #plot graph
     plt.plot(interval, LY, color="red", label = r'$Langrange P(x)$')
 
-def showHerm():
+def showHerm(hdat):
     #Y's for Herm(X)
-    HFunc = HR
+    HFunc = interpolation.HMethod(hdat)
     HY = [interpolation.evalPoly(HFunc,t) for t in interval]
 
     #plot graph
@@ -80,19 +76,19 @@ def getSplineY(S, data, num):
     else:
         return interpolation.F(num)
     
-def showLinSpline():
+def showLinSpline(lsDat):
     #imported data
-    LS = LSR
-    data = iData
+    LS = interpolation.LSMethod(lsDat)
+    data = lsDat
     #Y's for Linear Spline
     tInterval = arange(data[0][0],data[len(data)-1][0], delta)
     LSY = [getSplineY(LS, data, t) for t in tInterval]
     
     plt.plot(tInterval, LSY, color ="purple", label = r'$Linear Spline S(x)$')
 
-def showCubicSpline():
-    S = CSR
-    data = iData
+def showCubicSpline(csDat):
+    S = interpolation.CSMethod(csDat)
+    data = csDat
     #Y's for Cubic Spline
     tInterval = arange(data[0][0],data[len(data)-1][0], delta)
     SY = [getSplineY(S, data, t) for t in tInterval]
@@ -144,11 +140,12 @@ def showPies():
     plt.savefig("fx.png")
 
 
-def plotAll():
+def plotAll(dat):
     showF()
-    showLan()
-    showLinSpline()
-    showCubicSpline()
+    showLan(dat)
+    showHerm(dat)
+    showLinSpline(dat)
+    showCubicSpline(dat)
     restConfig()
     
 
@@ -176,5 +173,5 @@ def restConfig():
     #plt.savefig("Fx.svg")
     plt.savefig("fx.png")
 
-print("\nPlotting Corresponding Graphs...\n")
-plotAll()
+print("\nDisplay Graphs for interpolating methods with data set on \nF(X) = 1.6*e^(-2*x)*sin(3*pi*x)...\n")
+plotAll(iData)

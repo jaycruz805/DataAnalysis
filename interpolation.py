@@ -380,7 +380,8 @@ print("-----------------End Test---------------------")
 ######Interpolating one data set using all methods ######
 print("\n******** Interpolating data using Langrange, Hermite, Linear Spline, and Cubic Spline *********\n")
 d4 = GetData( [0, 1.0/6, 1.0/3, 1.0/2, 7.0/12, 2.0/3, 3.0/4, 5.0/6, 11.0/12, 1.0] )
-print("On Data Set :\nXi\tF(Xi)\t\tF'(Xi)")
+print("On Data Set :\nXi\tF(Xi)\t\tF'(Xi)\t\tGiven by F(X) = 1.6*e^(-2*x)*sin(3*pi*x)")
+
 showMatrix(d4)
 
 #Langrange Method
