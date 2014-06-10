@@ -41,7 +41,7 @@ Instructions: Download Files and Run files individually using any Python IDE or 
                graph interpolating polynomials. interpolation.py must be in the 
                same file directory as this file. 
                
-               Data: To represent data points create a matrix where the 
+                Data: To represent data points create a matrix where the 
                           first row represents your x-points and your second row
                           represents your y points.
                           EX: data = [ [1.0,2,3], [4,5.5,6.3] ]
