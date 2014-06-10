@@ -61,6 +61,6 @@ Instructions: Download Files and Run files individually using any Python IDE or 
                         
                             plotAll(data)       #plots and displays all methods
 **SnapShots:**
-![alt tag](https://github.com/jaycruz805/dataAnalysis/exampleGraphs.png
+![alt tag](https://drive.google.com/file/d/0B0Efoa9_G5TMV0ZVUzRNWEdSSEk/edit?usp=sharing)
 
 Enjoy!
