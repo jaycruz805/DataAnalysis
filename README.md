@@ -61,6 +61,7 @@ Instructions: Download Files and Run files individually using any Python IDE or 
                         
                             plotAll(data)       #plots and displays all methods
 **SnapShots:**
-![alt tag](https://drive.google.com/file/d/0B0Efoa9_G5TMV0ZVUzRNWEdSSEk/edit?usp=sharing)
+![ScreenShot](/screen_shots/InterpShot2.png)
+![ScreenShot](/screen_shots/exampleGraphs.png)
 
 Enjoy!
