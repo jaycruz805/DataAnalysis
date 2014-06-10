@@ -23,7 +23,7 @@ def printNames():
     
 printNames()
 
-
+#Reverses a generic array array
 def reverse(L):
     R = []
     for i in range(len(L)-1,-1,-1):
@@ -53,7 +53,8 @@ def printPoly(P):
                 else:
                     print("%s"%(P[i])),
     print
-    
+
+#Prints a spline section with a given data
 def printSpline(func, data):
     for i in range(len(func)):
         printPoly(func[i])
@@ -71,12 +72,14 @@ def getCol(mat, col):
         columVec.append(mat[i][col]),
     return(columVec)
 
+#adds 2 Polynomials to one. Both Polys Must be same size
 def addPoly(S,T):
     ST =[]
     for i in range(len(S)):
         ST.append( S[i] +T[i] )
     return(ST)
 
+#adds 2 Polynomials that can differ in length
 def addPoly2(P1, P2):
     Result = []
     l1 = len(P1)
@@ -111,18 +114,22 @@ def multPoly(p1, p2):
             result[i+j] = p1[i]*p2[j] + result[i+j]
     return result
 
+#evaluates a given polynomial(array format) at a certain x value.
 def evalPoly(P,x):
     result = 0;
     for i in range(len(P)):
         result = result + P[i]*(x**i)
     return result
 
+#Random Equation for testing purposes. Function returns value at a given x.
 def F(x):
     return ( (1.6*math.e**(-2*x))*(math.sin(3*math.pi*x)) )
 
+#derivative Equation of F(X)
 def Fd(x):
     return (math.e**(-2.0*x))*(4.8*math.pi*math.cos(3.0*math.pi*x) - 3.2*math.sin(3.0*math.pi*x) )
 
+#Function returns ordered data given x interval on the function F(X). For test purposes
 def GetData(X):
     data = []
     for i in range(len(X)):
@@ -130,6 +137,7 @@ def GetData(X):
         data.append(temp)
     return data
 
+#Finding Kth term Langrange coefficient
 def LK(k, data):
     result = [1]
     denom = 1
@@ -142,6 +150,7 @@ def LK(k, data):
     result = scalPoly(1.0/denom, result)
     return result
 
+#finding Nth term Hermite Coefficient
 def HCo(n , data):
     n = n-1
     Z = [0]*(2*n+2)
@@ -168,12 +177,14 @@ def HCo(n , data):
         Result.append(Q[i][i])
     return Result
 
+#Finds Linear Splines
 def LS(data, i):
     slope = (1.0*data[i+1][1]-data[i][1])/(data[i+1][0]-data[i][0])
     result = scalPoly(slope, [(-1.0)*data[i][0], 1])
     result = addPoly2(result, [data[i][1]])
     return result
 
+#Finds Cubic Linear Splines
 def CS(data):
     n = len(data)-1
     x = getCol(data,0)
@@ -233,6 +244,7 @@ def CS(data):
     result.append(d)
     return result
 
+#Finding Hermite Coefficients
 def HFac(size, X):
     Hf = [[1]]
     k = 0
@@ -242,7 +254,8 @@ def HFac(size, X):
         if i %2 ==0:
             k = k+1
     return Hf
-    
+
+#Returns Langrange Polynomial 
 def LPoly(n, data):
     Poly = []
     for i in range(n):
@@ -255,6 +268,7 @@ def LPoly(n, data):
         Result = addPoly(Result,Poly[i])
     return Result
 
+#Returns Hermite Polynomials
 def HPoly(HC, HF):    
     TResult = []
     Result = [0]
@@ -265,12 +279,14 @@ def HPoly(HC, HF):
         Result = addPoly2(Result, TResult[i])
     return Result
 
+#Returns Line Spline functions
 def LinSpline(data):
     ls = []
     for i in range(len(data)-1):
         ls.append(LS(data, i))
     return ls
 
+#Returning Cubic Spline functions
 def CubicSpline(data):
     cs = CS(data)
     ResultS = []
@@ -285,16 +301,17 @@ def CubicSpline(data):
         ResultS.append(polySum)
     return ResultS
 
+#Langrange Method
 def LMethod(data):
     LP = LPoly(len(data), data)
     return LP
-
+#Hermite Method
 def HMethod(data):
     HC = HCo(len(data), data)
     HF = HFac(len(HC), getCol(data,0))
     HP = HPoly(HC,HF)
     return HP
-
+#Linear Spline Method
 def LSMethod(data):
     ls = LinSpline(data)
     return ls
@@ -314,6 +331,7 @@ def LSMethod2(data, num):
         print("\nError, Cannot compute Linear Spline. %f is not within Xo and Xn.\n" %(num))
     return ls
 
+#Cubic Spline Method
 def CSMethod(data):
     S = CubicSpline(data)
     return S

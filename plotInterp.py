@@ -171,7 +171,6 @@ def restConfig():
     #save plot
     plt.show()
     #plt.savefig("Fx.svg")
-    plt.savefig("fx.png")
 
 print("\nDisplay Graphs for interpolating methods with data set on \nF(X) = 1.6*e^(-2*x)*sin(3*pi*x)...\n")
 plotAll(iData)
