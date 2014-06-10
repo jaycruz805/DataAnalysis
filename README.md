@@ -5,8 +5,9 @@ These programs analyze data using mathematical models and produces useful data/r
 
 Instructions: Download Files and Run files individually using any Python IDE or Command Line Interpreter.
 
-**Interpolation.py:**
-                    Data: To represent data points create a matrix where the 
+**Interpolation.py:** This program uses Langrang, Hermite, Linear Spline, and Cubic spline to interpolate data. 
+                    
+                       Data: To represent data points create a matrix where the 
                           first row represents your x-points and your second row
                           represents your y points.
                           EX: data = [ [1.0,2,3], [4,5.5,6.3] ]
