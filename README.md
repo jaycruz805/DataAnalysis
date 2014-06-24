@@ -62,6 +62,7 @@ Instructions: Download Files and Run files individually using any Python IDE or 
                             plotAll(data)       #plots and displays all methods
 **SnapShots:**
 ![ScreenShot](/screen_shots/InterpShot2.png)
+![ScreenShot](/screen_shots/InterpShot3.png)
 ![ScreenShot](/screen_shots/exampleGraphs.png)
 
 Enjoy!
